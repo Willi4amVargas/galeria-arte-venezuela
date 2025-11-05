@@ -1,0 +1,60 @@
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ede8df;
+            color: #660000;
+        }
+        header {
+            background-color: #660000; 
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        #introduccion {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        #galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .obra {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid #453f3f;
+            padding: 10px;
+            width: 300px; 
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .obra img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        .obra p {
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
