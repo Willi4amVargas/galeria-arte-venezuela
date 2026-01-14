@@ -1,112 +1,326 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Galería Virtual de Arte Venezolano.">
-    <meta name="author" content="Vegastudio">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Galería Virtual de Arte Venezolano." />
+    <meta name="author" content="Vegastudio" />
     <title>Galería Virtual de Arte Venezolano</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="Favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="Favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="Favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="Favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="Favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="Favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="Favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="Favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="Favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="Favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="Favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="Favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="Favicon/favicon-16x16.png">
-<link rel="manifest" href="Favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="Favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="Favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="Favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="Favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="Favicon/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="Favicon/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="Favicon/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="Favicon/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="Favicon/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="Favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="Favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="Favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="Favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="Favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
     <title>Galería Virtual de Arte Venezolano 🇻🇪</title>
-</head>
-<body>
-    
-
+  </head>
+  <body>
     <header>
-<select name="Artistas" id="selectorArtistas" class="Artistas">
-            <optgroup label="Artistas">
-                <option value="" selected disabled>Seleccionar Artista</option> 
-                <option value="Assets/armando_reveron.html">Armando Reveron</option>
-                <option value="Assets/arturo_michelena.html">Arturo Michelena</option>
-                <option value="Assets/martin_tovar_tovar.html">Martín Tovar y Tovar</option>
-                <option value="Assets/cristobal_rojas.html">Cristóbal Rojas</option>
-                </optgroup>
-            </select>
-        <h1>Arte y Colores de Venezuela 🎨</h1>
-        <p>Una muestra digital de la riqueza artística venezolana</p>
+      <h1>Arte y Colores de Venezuela 🎨</h1>
     </header>
 
     <main class="container">
+      <section id="introduccion">
+        <h2>Bienvenidos a la Galería</h2>
+        <p>
+          Explora la diversidad, el talento y la historia capturada por los
+          artistas clásicos venezolanos.
+        </p>
+      </section>
 
-        <section id="introduccion">
-            <h2>Bienvenidos a la Galería</h2>
-            <p>Explora la diversidad, el talento y la historia capturada por los artistas clasicos venezolanos.</p>
-        </section>
+      <section id="selector-artistas">
+        <h2>Nuestros Artistas Destacados</h2>
 
-        <section id="galeria">
-            <h2>Obras Destacadas</h2>
+        <div class="container my-4">
+          <div
+            id="carouselArtistas"
+            class="carousel slide carousel-artista"
+            data-bs-ride="carousel"
+            data-bs-interval="5000"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselArtistas"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Armando Reveron"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselArtistas"
+                data-bs-slide-to="1"
+                aria-label="Arturo Michelena"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselArtistas"
+                data-bs-slide-to="2"
+                aria-label="Cristóbal Rojas"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselArtistas"
+                data-bs-slide-to="3"
+                aria-label="Martín Tovar y Tovar"
+              ></button>
+            </div>
+            <div class="carousel-inner">
 
-            <article class="obra">
-                <a href="obra1_detalle.html">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/La_Cueva_%281920%29.jpg" alt="Título de la Obra 1">
-                </a>
-                <h3>La Cueva</h3>
-                <p><strong>Autor:</strong> Armando Reveron</p>
-                <p><strong>Fecha:</strong>1920</p>
-            </article>
+              <div 
+                class="carousel-item active" 
+                data-artista="Armando Reveron"
+                data-url="Assets/armando_reveron.html"
+              >
+                <img
+                  src="https://cdn.culturagenial.com/es/imagenes/reveron-0-cke.jpg?class=article"
+                  class="d-block w-100"
+                  alt="La Cueva - Armando Reveron"
+                />
+                <div class="artista-overlay">
+                  <div class="artista-name">Armando Reverón</div>
+                  <button class="artista-action">Ver Galería Completa</button>
+                </div>
+              </div>
+              
+              <div 
+                class="carousel-item"
+                data-artista="Arturo Michelena"
+                data-url="Assets/arturo_michelena.html"
+              >
+                <img
+                  src="http://radiomundial.com.ve/wp-content/uploads/2016/07/arturo.jpeg"
+                  class="d-block w-100"
+                  alt="Las Queseras del Medio - Arturo Michelena"
+                />
+                <div class="artista-overlay">
+                  <div class="artista-name">Arturo Michelena</div>
+                  <button class="artista-action">Ver Galería Completa</button>
+                </div>
+              </div>
+              
+              <div 
+                class="carousel-item"
+                data-artista="Cristóbal Rojas"
+                data-url="Assets/cristobal_rojas.html"
+              >
+                <img
+                  src="https://primicias24.s3.amazonaws.com/public/uploads/2020/12/Cristobal_Rojas.jpg"
+                  class="d-block w-100"
+                  alt="Autorretrato con sombrero rojo - Cristóbal Rojas"
+                />
+                <div class="artista-overlay">
+                  <div class="artista-name">Cristóbal Rojas</div>
+                  <button class="artista-action">Ver Galería Completa</button>
+                </div>
+              </div>
+              
+              <div 
+                class="carousel-item"
+                data-artista="Martín Tovar y Tovar"
+                data-url="Assets/martin_tovar_tovar.html"
+              >
+                <img
+                  src="https://estatico.mazo4f.com/1644498117142257410xg.jpg"
+                  class="d-block w-100"
+                  alt="La Batalla de Carabobo - Martín Tovar y Tovar"
+                />
+                <div class="artista-overlay">
+                  <div class="artista-name">Martín Tovar y Tovar</div>
+                  <button class="artista-action">Ver Galería Completa</button>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselArtistas" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselArtistas" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </section>
 
-            <article class="obra">
-                <a href="obra2_detalle.html">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Vuelvan_caras.jpg/1200px-Vuelvan_caras.jpg" alt="Título de la Obra 2">
-                </a>
-                <h3>Las Queseras del Medio</h3>
-                <p><strong>Autor:</strong> Arturo Michelena</p>
-                <p><strong>Fecha:</strong> 1885</p>
-            </article>
+      <section id="galeria">
+        <h2>Obras Destacadas</h2>
+        
+        <div class="row">
+          <article class="obra col-md-6 col-lg-3 mb-4">
+            <a href="obra1_detalle.html">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/e/e9/La_Cueva_%281920%29.jpg"
+                alt="La Cueva - Armando Reveron"
+                class="img-fluid"
+              />
+            </a>
+            <h3>La Cueva</h3>
+            <p><strong>Autor:</strong> Armando Reveron</p>
+            <p><strong>Fecha:</strong> 1920</p>
+          </article>
 
-            <article class="obra">
-                <a href="obra3_detalle.html">
-                    <img src="https://iamvenezuela.org/wp-content/uploads/sites/4/2019/03/Autorretrato-con-sombrero-rojo-de-1887.-Crist%C3%B3bal-Rojas.-Foto-Wikimedia-Commons-dominio-p%C3%BAblico..jpg" alt="Título de la Obra 3">
-                </a>
-                <h3>Autorretrato con sombrero rojo</h3>
-                <p><strong>Autor:</strong> Cristóbal Rojas</p>
-                <p><strong>Fecha:</strong> 1887</p>
-            </article>
+          <article class="obra col-md-6 col-lg-3 mb-4">
+            <a href="obra2_detalle.html">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Vuelvan_caras.jpg/1200px-Vuelvan_caras.jpg"
+                alt="Las Queseras del Medio - Arturo Michelena"
+                class="img-fluid"
+              />
+            </a>
+            <h3>Las Queseras del Medio</h3>
+            <p><strong>Autor:</strong> Arturo Michelena</p>
+            <p><strong>Fecha:</strong> 1885</p>
+          </article>
 
-            <article class="obra">
-                <a href="obra4_detalle.html">
-                    <img src="https://www.cinconoticias.com/wp-content/uploads/pintores-venezolanos-martin-tovar-y-tovar-batalla-de-carabobo.jpg" alt="Título de la Obra 4">
-                </a>
-                <h3>La Batalla de Carabobo</h3>
-                <p><strong>Autor:</strong> Martín Tovar y Tovar</p>
-                <p><strong>Fecha:</strong>1884</p>
-            </article>
-            
-            </section>
+          <article class="obra col-md-6 col-lg-3 mb-4">
+            <a href="obra3_detalle.html">
+              <img
+                src="https://iamvenezuela.org/wp-content/uploads/sites/4/2019/03/Autorretrato-con-sombrero-rojo-de-1887.-Crist%C3%B3bal-Rojas.-Foto-Wikimedia-Commons-dominio-p%C3%BAblico..jpg"
+                alt="Autorretrato con sombrero rojo - Cristóbal Rojas"
+                class="img-fluid"
+              />
+            </a>
+            <h3>Autorretrato con sombrero rojo</h3>
+            <p><strong>Autor:</strong> Cristóbal Rojas</p>
+            <p><strong>Fecha:</strong> 1887</p>
+          </article>
 
+          <article class="obra col-md-6 col-lg-3 mb-4">
+            <a href="obra4_detalle.html">
+              <img
+                src="https://www.cinconoticias.com/wp-content/uploads/pintores-venezolanos-martin-tovar-y-tovar-batalla-de-carabobo.jpg"
+                alt="La Batalla de Carabobo - Martín Tovar y Tovar"
+                class="img-fluid"
+              />
+            </a>
+            <h3>La Batalla de Carabobo</h3>
+            <p><strong>Autor:</strong> Martín Tovar y Tovar</p>
+            <p><strong>Fecha:</strong> 1884</p>
+          </article>
+        </div>
+      </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Galería de Arte Venezolano | Contacto: info@galeria.ve</p>
-        <p>Síguenos en <a href="#" style="color: white;">redes sociales</a></p>
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <p class="mb-0">&copy; 2026 Galería de Arte Venezolano | Contacto: info@galeria.ve</p>
+        <p class="mb-0">Síguenos en <a href="#" class="text-warning">@ArteyColoresdeVenezuela</a></p>
+      </div>
     </footer>
 
     <script>
-        document.getElementById('selectorArtistas').addEventListener('change', function() {
-            const url = this.value; 
+      document.addEventListener('DOMContentLoaded', function() {
+        const carouselItems = document.querySelectorAll('#carouselArtistas .carousel-item');
+        
+        carouselItems.forEach(item => {
 
-            if (url) {
+          item.addEventListener('click', function(e) {
+
+            
+            if (!isControl) {
+              e.stopPropagation();
+              const url = this.getAttribute('data-url');
+              if (url) {
                 window.location.href = url;
+              }
             }
+          });
+          
+
+          const actionBtn = item.querySelector('.artista-action');
+          if (actionBtn) {
+            actionBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              const url = item.getAttribute('data-url');
+              if (url) {
+                window.location.href = url;
+              }
+            });
+          }
         });
+      });
     </script>
 
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
