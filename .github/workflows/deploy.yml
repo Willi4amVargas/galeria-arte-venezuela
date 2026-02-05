@@ -8,11 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
-    environment: github-pages
-    env:
-      BUN_PUBLIC_SUPABASE_KEY: ${{ vars.BUN_PUBLIC_SUPABASE_KEY }}
-      BUN_PUBLIC_SUPABASE_URL: ${{ vars.BUN_PUBLIC_SUPABASE_URL }}
     
     permissions:
       contents: write 
@@ -30,13 +25,7 @@ jobs:
         run: bun install
 
       - name: Build static files
-        run: |
-          echo "--- Checking Environment Variables ---"
-          # Check the values are set in the shell environment
-          echo "SUPABASE_URL : $BUN_PUBLIC_SUPABASE_URL" 
-          echo "SUPABASE_KEY : $BUN_PUBLIC_SUPABASE_KEY"
-          echo "--- Starting Bun Build ---"
-          bun run build
+        run: bun run build
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
