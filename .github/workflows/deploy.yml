@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    environment: github-pages
+    env:
+      BUN_PUBLIC_SUPABASE_KEY: ${{ vars.BUN_PUBLIC_SUPABASE_KEY }}
+      BUN_PUBLIC_SUPABASE_URL: ${{ vars.BUN_PUBLIC_SUPABASE_URL }}
+    
+    permissions:
+      contents: write 
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.0.2
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Build static files
+        run: |
+          echo "--- Checking Environment Variables ---"
+          # Check the values are set in the shell environment
+          echo "SUPABASE_URL : $BUN_PUBLIC_SUPABASE_URL" 
+          echo "SUPABASE_KEY : $BUN_PUBLIC_SUPABASE_KEY"
+          echo "--- Starting Bun Build ---"
+          bun run build
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' 
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
