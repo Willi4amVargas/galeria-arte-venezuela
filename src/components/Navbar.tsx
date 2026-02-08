@@ -6,7 +6,7 @@ export function Navbar() {
   return (
     <>
       <nav className="w-full bg-[#2b2f32] flex py-9">
-        <section className="mx-30 flex justify-between w-full">
+        <section className="mx-2 md:mx-30 flex justify-between w-full">
           <h1 className="text-2xl font-bold text-[#ffc107]">
             {state.id === 1 ? (
               <a href="#">🎨 Galería Virtual de Arte</a>
