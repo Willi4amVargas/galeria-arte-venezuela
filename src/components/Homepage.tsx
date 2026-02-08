@@ -6,25 +6,22 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useState } from "react";
-import { getArtWork, getArtWorkImages, calculateScale } from "@/services/art";
-import type { IArt } from "@/types/art";
+import { getArtWorkImages, calculateScale } from "@/services/art";
+import { useArt } from "@/context/ArtContext";
+import { useEffect } from "react";
+import { useAppState } from "@/context/AppStateContext";
+import { APP_CONSTANTS } from "@/app.constants";
 
 export function Homepage() {
-  const [artData, setArtData] = useState<IArt[]>();
+  const { artWorks, getArtWorks } = useArt();
+  const { setAppState } = useAppState();
+
   useEffect(() => {
-    getArtWork({
-      q: {
-        page: 1,
-        limit: 20,
-      },
-    }).then((e) => {
-      if (e) {
-        if (Array.isArray(e)) {
-          setArtData(e);
-        }
-      }
-    });
+    if (!artWorks)
+      getArtWorks({
+        params: { q: { page: 1, limit: 20 }, random: true },
+        size: { max_heigth: 500, max_width: 500 },
+      });
   }, []);
 
   return (
@@ -47,32 +44,33 @@ export function Homepage() {
           ]}
         >
           <CarouselContent>
-            {artData &&
-              artData.map(
-                ({ id, image_id, title, thumbnail, artist_display }, index) => {
+            {artWorks &&
+              artWorks.map(
+                (
+                  { id, image_url, title, thumbnail, artist_display },
+                  index,
+                ) => {
                   //for render only firts 10
-                  if (index > 10) return;
+                  if (index > 9) return;
                   if (thumbnail) {
-                    const MAX_WIDTH = 350;
-                    const MAX_HEIGTH = 750;
-
-                    const imgSrc = getArtWorkImages({
-                      image_id,
-                      resize: {
-                        find_width: MAX_WIDTH,
-                        find_heigth: MAX_HEIGTH,
-                        width: thumbnail.width,
-                        height: thumbnail.height,
-                      },
-                    });
                     return (
                       <CarouselItem key={id}>
                         <div className="h-full flex flex-col items-center">
-                          <img
-                            className="my-auto"
-                            src={imgSrc}
-                            loading="lazy"
-                          />
+                          <button
+                            onClick={() =>
+                              setAppState({
+                                id: APP_CONSTANTS.ART_WORK_DETAIL_STATE,
+                                artwork_id: index,
+                              })
+                            }
+                            className="cursor-pointer"
+                          >
+                            <img
+                              className="my-auto"
+                              src={image_url}
+                              loading="lazy"
+                            />
+                          </button>
                           <span>{title}</span>
                           <i className="text-xs">{artist_display}</i>
                         </div>
@@ -85,10 +83,12 @@ export function Homepage() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
-        <h1 className="text-3xl text-[#333333] mt-20 mb-10" id="featured-works">Obras Destacadas</h1>
+        <h1 className="text-3xl text-[#333333] mt-20 mb-10" id="featured-works">
+          Obras Destacadas
+        </h1>
         <div className="grid md:grid-cols-2 xl:grid-cols-4 grid-cols-1 mx-20 gap-x-5 gap-y-10">
-          {artData &&
-            artData.map(
+          {artWorks &&
+            artWorks.map(
               (
                 {
                   id,
@@ -101,7 +101,7 @@ export function Homepage() {
                 index,
               ) => {
                 // Omitir los primeros 11 elementos
-                if (index <= 10) return null;
+                if (index < 10) return null;
 
                 if (thumbnail) {
                   const MAX_WIDTH = 250;
@@ -132,17 +132,37 @@ export function Homepage() {
                           height: `${finalHeight}px`,
                         }}
                       >
-                        <img
-                          src={thumbnail.lqip}
-                          className="absolute inset-0 w-full h-full blur-sm scale-105"
-                          alt=""
-                        />
-                        <img
-                          src={imgSrc}
-                          alt={thumbnail.alt_text || title}
-                          className="relative z-10 w-full h-full object-contain"
-                          loading="lazy"
-                        />
+                        <button
+                          onClick={() =>
+                            setAppState({
+                              id: APP_CONSTANTS.ART_WORK_DETAIL_STATE,
+                              artwork_id: index,
+                            })
+                          }
+                          className="cursor-pointer"
+                        >
+                          <img
+                            src={thumbnail.lqip}
+                            className="absolute inset-0 w-full h-full blur-sm scale-105"
+                            alt=""
+                          />
+                        </button>
+                        <button
+                          onClick={() =>
+                            setAppState({
+                              id: APP_CONSTANTS.ART_WORK_DETAIL_STATE,
+                              artwork_id: index,
+                            })
+                          }
+                          className="cursor-pointer"
+                        >
+                          <img
+                            src={imgSrc}
+                            alt={thumbnail.alt_text || title}
+                            className="relative z-10 w-full h-full object-contain"
+                            loading="lazy"
+                          />
+                        </button>
                       </div>
 
                       <div className="w-full text-center px-2">

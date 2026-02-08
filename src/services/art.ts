@@ -6,7 +6,7 @@ interface IQueryGetArtWork {
   limit: number;
 }
 
-interface IGetArtWork {
+export interface IGetArtWork {
   id?: number;
   random?: boolean;
   q?: IQueryGetArtWork;

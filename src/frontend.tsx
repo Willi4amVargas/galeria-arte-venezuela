@@ -8,11 +8,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
+import { ContextLayout } from "./context/ContextLayout";
 
 const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
-    <App />
+    <ContextLayout>
+      <App />
+    </ContextLayout>
   </StrictMode>
 );
 
